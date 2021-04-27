@@ -129,14 +129,14 @@ void GlobalVar::createMenu() {
     glutAddMenuEntry("Square", SQUARE);
     glutAddMenuEntry("Rectangle", RECTANGLE);
     
-//    int color_id = glutCreateMenu(menu);
-//    glutAddMenuEntry("Red", RED);
-//    glutAddMenuEntry("Green", GREEN);
-//    glutAddMenuEntry("Blue", BLUE);
-//
-//    int polygon_id = glutCreateMenu(menu);
-//    glutAddMenuEntry("Pentagon", PENTAGON);
-//    glutAddMenuEntry("Hexagon", HEXAGON);
+    int color_id = glutCreateMenu(menu);
+    glutAddMenuEntry("Red", RED);
+    glutAddMenuEntry("Green", GREEN);
+    glutAddMenuEntry("Blue", BLUE);
+
+    int polygon_id = glutCreateMenu(menu);
+    glutAddMenuEntry("Pentagon", PENTAGON);
+    glutAddMenuEntry("Hexagon", HEXAGON);
     
     glutCreateMenu(menu);
     glutAddMenuEntry("Clear", CLEAR);
