@@ -43,8 +43,6 @@ public:
     void generateRectangle(Point a, Point b);
     void generateSquare(Point a, Point b);
     
-    void generatePentagon(Point a, Point b);
-    
     void initNewObj();
     
     void clear();

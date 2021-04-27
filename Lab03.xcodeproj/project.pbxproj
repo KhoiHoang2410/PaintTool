@@ -13,7 +13,6 @@
 		FD8A71E8263843CB008AEFFD /* Quadrilateral.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71D8263843CB008AEFFD /* Quadrilateral.cpp */; };
 		FD8A71E9263843CB008AEFFD /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71D9263843CB008AEFFD /* Point.cpp */; };
 		FD8A71EA263843CB008AEFFD /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DA263843CB008AEFFD /* Triangle.cpp */; };
-		FD8A71EB263843CB008AEFFD /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DB263843CB008AEFFD /* Polygon.cpp */; };
 		FD8A71EC263843CB008AEFFD /* Oval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DC263843CB008AEFFD /* Oval.cpp */; };
 		FD8A71ED263843CB008AEFFD /* RBGColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DD263843CB008AEFFD /* RBGColor.cpp */; };
 		FD8A71EE263843CC008AEFFD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DF263843CB008AEFFD /* main.cpp */; };
@@ -41,7 +40,6 @@
 		FD8A71D8263843CB008AEFFD /* Quadrilateral.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quadrilateral.cpp; sourceTree = "<group>"; };
 		FD8A71D9263843CB008AEFFD /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		FD8A71DA263843CB008AEFFD /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
-		FD8A71DB263843CB008AEFFD /* Polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygon.cpp; sourceTree = "<group>"; };
 		FD8A71DC263843CB008AEFFD /* Oval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oval.cpp; sourceTree = "<group>"; };
 		FD8A71DD263843CB008AEFFD /* RBGColor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RBGColor.cpp; sourceTree = "<group>"; };
 		FD8A71DF263843CB008AEFFD /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				FD8A71D8263843CB008AEFFD /* Quadrilateral.cpp */,
 				FD8A71D9263843CB008AEFFD /* Point.cpp */,
 				FD8A71DA263843CB008AEFFD /* Triangle.cpp */,
-				FD8A71DB263843CB008AEFFD /* Polygon.cpp */,
 				FD8A71DC263843CB008AEFFD /* Oval.cpp */,
 				FD8A71DD263843CB008AEFFD /* RBGColor.cpp */,
 			);
@@ -199,7 +196,6 @@
 				FD8A71ED263843CB008AEFFD /* RBGColor.cpp in Sources */,
 				FD8A71EE263843CC008AEFFD /* main.cpp in Sources */,
 				FD8A71EA263843CB008AEFFD /* Triangle.cpp in Sources */,
-				FD8A71EB263843CB008AEFFD /* Polygon.cpp in Sources */,
 				FD8A71E5263843CB008AEFFD /* Line.cpp in Sources */,
 				FD8A71E6263843CB008AEFFD /* Canvas.cpp in Sources */,
 				FD8A71E8263843CB008AEFFD /* Quadrilateral.cpp in Sources */,
