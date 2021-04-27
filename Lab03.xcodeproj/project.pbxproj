@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD8A71CD26384385008AEFFD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71CC26384385008AEFFD /* main.cpp */; };
+		FD8A71E5263843CB008AEFFD /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71D5263843CB008AEFFD /* Line.cpp */; };
+		FD8A71E6263843CB008AEFFD /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71D6263843CB008AEFFD /* Canvas.cpp */; };
+		FD8A71E7263843CB008AEFFD /* GlobalVar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71D7263843CB008AEFFD /* GlobalVar.cpp */; };
+		FD8A71E8263843CB008AEFFD /* Quadrilateral.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71D8263843CB008AEFFD /* Quadrilateral.cpp */; };
+		FD8A71E9263843CB008AEFFD /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71D9263843CB008AEFFD /* Point.cpp */; };
+		FD8A71EA263843CB008AEFFD /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DA263843CB008AEFFD /* Triangle.cpp */; };
+		FD8A71EB263843CB008AEFFD /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DB263843CB008AEFFD /* Polygon.cpp */; };
+		FD8A71EC263843CB008AEFFD /* Oval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DC263843CB008AEFFD /* Oval.cpp */; };
+		FD8A71ED263843CB008AEFFD /* RBGColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DD263843CB008AEFFD /* RBGColor.cpp */; };
+		FD8A71EE263843CC008AEFFD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DF263843CB008AEFFD /* main.cpp */; };
+		FD8A71F3263843E3008AEFFD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8A71F2263843E3008AEFFD /* OpenGL.framework */; };
+		FD8A71F5263843E6008AEFFD /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8A71F4263843E6008AEFFD /* GLUT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +35,22 @@
 
 /* Begin PBXFileReference section */
 		FD8A71C926384385008AEFFD /* Lab03 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab03; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD8A71CC26384385008AEFFD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FD8A71D5263843CB008AEFFD /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
+		FD8A71D6263843CB008AEFFD /* Canvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
+		FD8A71D7263843CB008AEFFD /* GlobalVar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalVar.cpp; sourceTree = "<group>"; };
+		FD8A71D8263843CB008AEFFD /* Quadrilateral.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quadrilateral.cpp; sourceTree = "<group>"; };
+		FD8A71D9263843CB008AEFFD /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
+		FD8A71DA263843CB008AEFFD /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		FD8A71DB263843CB008AEFFD /* Polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygon.cpp; sourceTree = "<group>"; };
+		FD8A71DC263843CB008AEFFD /* Oval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oval.cpp; sourceTree = "<group>"; };
+		FD8A71DD263843CB008AEFFD /* RBGColor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RBGColor.cpp; sourceTree = "<group>"; };
+		FD8A71DF263843CB008AEFFD /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FD8A71E1263843CB008AEFFD /* RBGColor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RBGColor.hpp; sourceTree = "<group>"; };
+		FD8A71E2263843CB008AEFFD /* Point.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Point.hpp; sourceTree = "<group>"; };
+		FD8A71E3263843CB008AEFFD /* GlobalVar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GlobalVar.hpp; sourceTree = "<group>"; };
+		FD8A71E4263843CB008AEFFD /* Canvas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Canvas.hpp; sourceTree = "<group>"; };
+		FD8A71F2263843E3008AEFFD /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		FD8A71F4263843E6008AEFFD /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8A71F5263843E6008AEFFD /* GLUT.framework in Frameworks */,
+				FD8A71F3263843E3008AEFFD /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +71,7 @@
 			children = (
 				FD8A71CB26384385008AEFFD /* Lab03 */,
 				FD8A71CA26384385008AEFFD /* Products */,
+				FD8A71F1263843E2008AEFFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +86,55 @@
 		FD8A71CB26384385008AEFFD /* Lab03 */ = {
 			isa = PBXGroup;
 			children = (
-				FD8A71CC26384385008AEFFD /* main.cpp */,
+				FD8A71E0263843CB008AEFFD /* include */,
+				FD8A71D4263843CB008AEFFD /* lib */,
+				FD8A71DE263843CB008AEFFD /* test */,
 			);
 			path = Lab03;
+			sourceTree = "<group>";
+		};
+		FD8A71D4263843CB008AEFFD /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A71D5263843CB008AEFFD /* Line.cpp */,
+				FD8A71D6263843CB008AEFFD /* Canvas.cpp */,
+				FD8A71D7263843CB008AEFFD /* GlobalVar.cpp */,
+				FD8A71D8263843CB008AEFFD /* Quadrilateral.cpp */,
+				FD8A71D9263843CB008AEFFD /* Point.cpp */,
+				FD8A71DA263843CB008AEFFD /* Triangle.cpp */,
+				FD8A71DB263843CB008AEFFD /* Polygon.cpp */,
+				FD8A71DC263843CB008AEFFD /* Oval.cpp */,
+				FD8A71DD263843CB008AEFFD /* RBGColor.cpp */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		FD8A71DE263843CB008AEFFD /* test */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A71DF263843CB008AEFFD /* main.cpp */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		FD8A71E0263843CB008AEFFD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A71E1263843CB008AEFFD /* RBGColor.hpp */,
+				FD8A71E2263843CB008AEFFD /* Point.hpp */,
+				FD8A71E3263843CB008AEFFD /* GlobalVar.hpp */,
+				FD8A71E4263843CB008AEFFD /* Canvas.hpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		FD8A71F1263843E2008AEFFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A71F4263843E6008AEFFD /* GLUT.framework */,
+				FD8A71F2263843E3008AEFFD /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8A71CD26384385008AEFFD /* main.cpp in Sources */,
+				FD8A71EC263843CB008AEFFD /* Oval.cpp in Sources */,
+				FD8A71E9263843CB008AEFFD /* Point.cpp in Sources */,
+				FD8A71E7263843CB008AEFFD /* GlobalVar.cpp in Sources */,
+				FD8A71ED263843CB008AEFFD /* RBGColor.cpp in Sources */,
+				FD8A71EE263843CC008AEFFD /* main.cpp in Sources */,
+				FD8A71EA263843CB008AEFFD /* Triangle.cpp in Sources */,
+				FD8A71EB263843CB008AEFFD /* Polygon.cpp in Sources */,
+				FD8A71E5263843CB008AEFFD /* Line.cpp in Sources */,
+				FD8A71E6263843CB008AEFFD /* Canvas.cpp in Sources */,
+				FD8A71E8263843CB008AEFFD /* Quadrilateral.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = usr/local/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = usr/local/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
