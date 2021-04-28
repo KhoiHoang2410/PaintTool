@@ -22,6 +22,7 @@ Point ptmp1, ptmp2;
 
 void Render();
 void keyboardUpFunc(unsigned char key, int x, int y);
+void ProcessDraw(int type);
 
 int main(int argc, char** argv) {
     freopen("output.txt", "w", stdout);
@@ -50,7 +51,6 @@ int main(int argc, char** argv) {
 void Render() {
     if (GlobalVar::isFinishHoldLeft && GlobalVar::idTitle != FREESTYLE) {
         GlobalVar::isFinishHoldLeft = 0;
-        base.initNewObj();
         base.add(newObj);
     }
     
@@ -59,96 +59,68 @@ void Render() {
     switch (GlobalVar::idTitle) {
         case FREESTYLE:
             if (GlobalVar::isFinishHoldRight) {
-                GlobalVar::createMenu();
                 GlobalVar::isFinishHoldRight = 0;
+                GlobalVar::createMenu();
                 isFirstTime = 1;
                 base.generateLine(ptmp1, ptmp2);
-                base.drawScreen();
                 break;
             }
     
             if (GlobalVar::isFinishHoldLeft) {
                 GlobalVar::isFinishHoldLeft = 0;
                 if (isFirstTime) {
-                    base.initNewObj();
+                    base.initNewObj(FREESTYLE);
                     isFirstTime = 0;
                     glutDetachMenu(GLUT_RIGHT_BUTTON);
                     ptmp1 = GlobalVar::Pcur;
                 }
                 ptmp2 = GlobalVar::Pcur;
                 base.generateLine(GlobalVar::Ppre, GlobalVar::Pcur);
-                base.drawScreen();
+                base.add(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY());
             }
             
             break;
         case LINE:
             if (GlobalVar::isHoldLeft) {
-                base.clearScreen();
-                newObj.initNewObj();
-                newObj.generateLine(GlobalVar::Ppre, GlobalVar::Pcur);
-                base.drawScreen();
-                newObj.drawScreen();
+                ProcessDraw(LINE);
             }
 
             break;
         case CIRCLE:
             if (GlobalVar::isHoldLeft) {
-                base.clearScreen();
-                newObj.initNewObj();
-                newObj.generateCircle(GlobalVar::Ppre, GlobalVar::Pcur);
-                base.drawScreen();
-                newObj.drawScreen();
+                ProcessDraw(CIRCLE);
             }
 
             break;
         case ELIPPSE:
             if (GlobalVar::isHoldLeft) {
-                base.clearScreen();
-                newObj.initNewObj();
-                newObj.generateElippse(GlobalVar::Ppre, GlobalVar::Pcur);
-                base.drawScreen();
-                newObj.drawScreen();
+                ProcessDraw(ELIPPSE);
             }
 
             break;
         case RIGHT_TRIANGLE:
             if (GlobalVar::isHoldLeft) {
-                base.clearScreen();
-                newObj.initNewObj();
-                newObj.generateRightTriangle(GlobalVar::Ppre, GlobalVar::Pcur);
-                base.drawScreen();
-                newObj.drawScreen();
+                ProcessDraw(RIGHT_TRIANGLE);
             }
             
             break;
         case EQUILATERAL_TRIANGLE:
             if (GlobalVar::isHoldLeft) {
-                base.clearScreen();
-                newObj.initNewObj();
-                newObj.generateEquilateralTriangle(GlobalVar::Ppre, GlobalVar::Pcur);
-                base.drawScreen();
-                newObj.drawScreen();
+                ProcessDraw(EQUILATERAL_TRIANGLE);
             }
             
             break;
         case RECTANGLE:
             if (GlobalVar::isHoldLeft) {
-                base.clearScreen();
-                newObj.initNewObj();
-                newObj.generateRectangle(GlobalVar::Ppre, GlobalVar::Pcur);
-                base.drawScreen();
-                newObj.drawScreen();
+                ProcessDraw(RECTANGLE);
             }
 
             break;
         case SQUARE:
             if (GlobalVar::isHoldLeft) {
-                base.clearScreen();
-                newObj.initNewObj();
-                newObj.generateSquare(GlobalVar::Ppre, GlobalVar::Pcur);
-                base.drawScreen();
-                newObj.drawScreen();
+                ProcessDraw(SQUARE);
             }
+            
             break;
         case CLEAR:
             base.clear();
@@ -162,4 +134,18 @@ void Render() {
             break;
     }
     glFlush();
+}
+
+void ProcessDraw(int type) {
+    newObj.initNewObj(type);
+    newObj.add(GlobalVar::Ppre.getX(), GlobalVar::Ppre.getY());
+    newObj.add(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY());
+
+    base.clearScreen();
+    base.drawScreen();
+    newObj.drawScreen();
+}
+
+void keyboardUpFunc(unsigned char key, int x, int y) {
+    
 }

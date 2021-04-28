@@ -27,8 +27,8 @@ void Canvas::generateCircle(Point a, Point b) {
     do {
         for (int i=-1;i<=1;i+=2)
         for (int j=-1;j<=1;j+=2) {
-            add(center.getX() + x * i, center.getY() + y * j);
-            add(center.getX() + y * i, center.getY() + x * j);
+            putPixel(center.getX() + x * i, center.getY() + y * j);
+            putPixel(center.getX() + y * i, center.getY() + x * j);
         }
         
         ++y;
@@ -64,7 +64,7 @@ void Canvas::generateElippse(Point a, Point b) {
     while (dx < dy) {
         for (int i=-1;i<=1;i+=2)
         for (int j=-1;j<=1;j+=2){
-            add(center.getX() + x * i, center.getY() + y * j);
+            putPixel(center.getX() + x * i, center.getY() + y * j);
         }
         
         ++x;
@@ -84,7 +84,7 @@ void Canvas::generateElippse(Point a, Point b) {
     while (y >= 0) {
         for (int i=-1;i<=1;i+=2)
         for (int j=-1;j<=1;j+=2){
-            add(center.getX() + x * i, center.getY() + y * j);
+            putPixel(center.getX() + x * i, center.getY() + y * j);
         }
         
         --y;

@@ -24,7 +24,7 @@ void Canvas::generateLine(Point a, Point b) {
         int x = a.getX(), y = a.getY();
         
         do {
-            add(x, y);
+            putPixel(x, y);
             
             if (p < 0)
                 p += c1;
@@ -45,7 +45,7 @@ void Canvas::generateLine(Point a, Point b) {
         int x = a.getX(), y = a.getY();
                 
         do {
-            add(x, y);
+            putPixel(x, y);
             
             if (p < 0)
                 p += c1;
