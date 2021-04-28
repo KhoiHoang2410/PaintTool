@@ -131,6 +131,7 @@ void GlobalVar::createMenu() {
     
     glutCreateMenu(menu);
     glutAddMenuEntry("Clear", CLEAR);
+    glutAddMenuEntry("Pencil", PENCIL);
     glutAddMenuEntry("Free Style", FREESTYLE);
     glutAddMenuEntry("Line", LINE);
     glutAddSubMenu("Triangle", triangle_id);

@@ -15,7 +15,7 @@
 #include <stdio.h>
 using namespace std;
 
-int window_id;
+int window_id, preMenu;
 Canvas base, newObj;
 bool isFirstTime = 1;
 Point ptmp1, ptmp2;
@@ -43,19 +43,27 @@ int main(int argc, char** argv) {
     glutKeyboardUpFunc(keyboardUpFunc);
     
     glutDisplayFunc(&Render);
+    
+    preMenu = GlobalVar::idTitle;
+    
     glutMainLoop();
         
     return 0;
 }
 
 void Render() {
-    if (GlobalVar::isFinishHoldLeft && GlobalVar::idTitle != FREESTYLE) {
+    if (preMenu == PENCIL && preMenu != GlobalVar::idTitle) {
+        isFirstTime = 1;
+        GlobalVar::isFinishHoldLeft = 0;
+    }
+    
+    preMenu = GlobalVar::idTitle;
+
+    if (GlobalVar::isFinishHoldLeft && GlobalVar::idTitle != FREESTYLE && GlobalVar::idTitle != PENCIL) {
         GlobalVar::isFinishHoldLeft = 0;
         base.add(newObj);
     }
-    
-    newObj.clear();
-    
+        
     switch (GlobalVar::idTitle) {
         case FREESTYLE:
             if (GlobalVar::isFinishHoldRight) {
@@ -79,6 +87,17 @@ void Render() {
                 base.add(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY());
             }
             
+            break;
+        case PENCIL:
+            if (GlobalVar::isHoldLeft) {
+                if (isFirstTime) {
+                    isFirstTime = 0;
+                    base.initNewObj(PENCIL);
+                }
+                
+                base.add(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY());
+                base.putPixel(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY());
+            }
             break;
         case LINE:
             if (GlobalVar::isHoldLeft) {
@@ -137,6 +156,7 @@ void Render() {
 }
 
 void ProcessDraw(int type) {
+    newObj.clear();
     newObj.initNewObj(type);
     newObj.add(GlobalVar::Ppre.getX(), GlobalVar::Ppre.getY());
     newObj.add(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY());

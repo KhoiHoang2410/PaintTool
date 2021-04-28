@@ -60,7 +60,10 @@ void Canvas::drawScreen() {
                 
                 generateLine(points[i].se[0], points[i].se.back());
                 break;
-                
+            case PENCIL:
+                for (int j=0; j<points[i].se.size(); ++j)
+                    putPixel(points[i].se[j].getX(), points[i].se[j].getY());
+                break;
             case LINE:
                 generateLine(points[i].se[0], points[i].se[1]);
                 break;
