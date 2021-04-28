@@ -25,20 +25,19 @@ Canvas::Canvas() {
     this->height = GlobalVar::getHeight();
 }
 
-void Canvas::add(int x, int y) {
-    if (GlobalVar::checkWidth(x) && GlobalVar::checkHeight(y)){
-        points.back().push_back(Point(x, y));
-    }
-}
-
-void Canvas::initNewObj() {
-    points.push_back(vector<Point>());
+void Canvas::initNewObj(int type) {
+    points.push_back(make_pair(type, vector<Point>()));
 }
 
 void Canvas::clear() {
     for (int i=0;i<points.size();++i)
-    points[i].clear();
+        points[i].se.clear();
     points.clear();
+}
+
+void Canvas::add(int x, int y) {
+    points.back().se.push_back(Point(x, y));
+    putPixel(x, y);
 }
 
 void Canvas::add(const Canvas& src) {
@@ -54,9 +53,14 @@ void Canvas::putPixel(int x, int y) {
 }
 
 void Canvas::drawScreen() {
-    for (int i=0; i < points.size(); ++i) {
-        for (int j=0; j< points[i].size(); ++j) {
-            putPixel(points[i][j].getX(), points[i][j].getY());
+    for (int i=0; i<points.size(); ++i) {
+        switch (points[i].fi) {
+            case FREESTYLE:
+                for (int )
+                break;
+                
+            default:
+                break;
         }
     }
 }

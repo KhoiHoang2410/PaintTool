@@ -81,14 +81,6 @@ void Render() {
             }
             
             break;
-        case PENCIL:
-            if (GlobalVar::isHoldLeft) {
-                base.initNewObj();
-                base.add(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY());
-                base.putPixel(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY());
-            }
-            
-            break;
         case LINE:
             if (GlobalVar::isHoldLeft) {
                 base.clearScreen();
@@ -170,8 +162,4 @@ void Render() {
             break;
     }
     glFlush();
-}
-
-void keyboardUpFunc(unsigned char key, int x, int y) {
-
 }

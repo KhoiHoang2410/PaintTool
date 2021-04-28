@@ -14,7 +14,7 @@ using namespace std;
 
 class Canvas {
 private:
-    vector<vector<Point> > points;
+    vector<pair<int, vector<Point> > > points;
     int width, height;
 public:
     Canvas();
@@ -22,8 +22,8 @@ public:
     void clearScreen();
     
     void putPixel(int x, int y);
-    void add(int x, int y);
     
+    void add(int x, int y);
     void add(const Canvas& src);
     void drawScreen();
     
@@ -37,7 +37,7 @@ public:
     void generateRectangle(Point a, Point b);
     void generateSquare(Point a, Point b);
     
-    void initNewObj();
+    void initNewObj(int type);
     
     void clear();
 };

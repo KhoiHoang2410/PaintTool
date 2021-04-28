@@ -129,25 +129,13 @@ void GlobalVar::createMenu() {
     glutAddMenuEntry("Square", SQUARE);
     glutAddMenuEntry("Rectangle", RECTANGLE);
     
-    int color_id = glutCreateMenu(menu);
-    glutAddMenuEntry("Red", RED);
-    glutAddMenuEntry("Green", GREEN);
-    glutAddMenuEntry("Blue", BLUE);
-
-    int polygon_id = glutCreateMenu(menu);
-    glutAddMenuEntry("Pentagon", PENTAGON);
-    glutAddMenuEntry("Hexagon", HEXAGON);
-    
     glutCreateMenu(menu);
     glutAddMenuEntry("Clear", CLEAR);
-    glutAddMenuEntry("Pencil", PENCIL);
     glutAddMenuEntry("Free Style", FREESTYLE);
     glutAddMenuEntry("Line", LINE);
     glutAddSubMenu("Triangle", triangle_id);
     glutAddSubMenu("Quadrilateral", quadrilateral_id);
     glutAddSubMenu("Oval", oval_id);
-    //glutAddSubMenu("Polygon", polygon_id);
-    //glutAddSubMenu("Color", color_id);
     glutAddMenuEntry("Quit", QUIT);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
