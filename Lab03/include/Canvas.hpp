@@ -9,26 +9,20 @@
 #define Canvas_hpp
 
 #include "Point.hpp"
-#include "RBGColor.hpp"
 #include <vector>
 using namespace std;
 
 class Canvas {
 private:
-    //vector<vector<pair<Point, RGBColor> > > points;
     vector<vector<Point> > points;
-    vector<vector<RGBColor> > screen;
     int width, height;
 public:
     Canvas();
     
     void clearScreen();
     
-    RGBColor getPixel(int x, int y);
-    void putPixel(int x, int y, RGBColor color = RGBColor());
-    void add(int x, int y, RGBColor color = RGBColor());
-    
-    void fillColor(int x, int y, RGBColor color);
+    void putPixel(int x, int y);
+    void add(int x, int y);
     
     void add(const Canvas& src);
     void drawScreen();

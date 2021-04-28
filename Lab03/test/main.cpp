@@ -157,28 +157,6 @@ void Render() {
                 base.drawScreen();
                 newObj.drawScreen();
             }
-
-            break;
-        case RED:
-            if (GlobalVar::isHoldLeft) {
-                base.initNewObj();
-                base.fillColor(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY(), RGBColor(255, 0, 0));
-            }
-
-            break;
-        case GREEN:
-            if (GlobalVar::isHoldLeft) {
-                base.initNewObj();
-                base.fillColor(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY(), RGBColor(0, 255, 0));
-            }
-
-            break;
-        case BLUE:
-            if (GlobalVar::isHoldLeft) {
-                base.initNewObj();
-                base.fillColor(GlobalVar::Pcur.getX(), GlobalVar::Pcur.getY(), RGBColor(0, 0, 255));
-            }
-
             break;
         case CLEAR:
             base.clear();
