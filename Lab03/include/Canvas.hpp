@@ -15,8 +15,8 @@ using namespace std;
 
 class Canvas {
 private:
-    //vector<vector<pair<Point, RGBColor> > > points;
-    vector<vector<Point> > points;
+    vector<vector<pair<Point, RGBColor> > > points;
+    //vector<vector<Point> > points;
     vector<vector<RGBColor> > screen;
     int width, height;
 public:

@@ -147,7 +147,7 @@ void GlobalVar::createMenu() {
     glutAddSubMenu("Quadrilateral", quadrilateral_id);
     glutAddSubMenu("Oval", oval_id);
     //glutAddSubMenu("Polygon", polygon_id);
-    //glutAddSubMenu("Color", color_id);
+    glutAddSubMenu("Color", color_id);
     glutAddMenuEntry("Quit", QUIT);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
