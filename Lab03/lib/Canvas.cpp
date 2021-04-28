@@ -101,3 +101,13 @@ void Canvas::drawScreen() {
 void Canvas::clearScreen() {
     glClear(GL_COLOR_BUFFER_BIT);
 }
+
+Point Canvas::pivot(int id) {
+    if (id == -1) id = (int) points.size() - 1;
+    
+    Point res = Point(0, 0);
+    for (int i=0;i<points[id].se.size();++i)
+        res = res + points[id].se[i];
+    
+    return res / (int) points[id].se.size();
+}

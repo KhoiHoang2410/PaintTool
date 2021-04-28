@@ -167,5 +167,5 @@ void ProcessDraw(int type) {
 }
 
 void keyboardUpFunc(unsigned char key, int x, int y) {
-    
+    if ('A' <= key && key <= 'Z') key -= 'A' - 'a';
 }

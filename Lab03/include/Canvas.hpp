@@ -27,6 +27,8 @@ public:
     void add(const Canvas& src);
     void drawScreen();
     
+    Point pivot(int id = -1);
+    
     void generateLine(Point a, Point b);
     void generateCircle(Point a, Point b);
     void generateElippse(Point a, Point b);

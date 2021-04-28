@@ -17,6 +17,7 @@
 		FD8A71EE263843CC008AEFFD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD8A71DF263843CB008AEFFD /* main.cpp */; };
 		FD8A71F3263843E3008AEFFD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8A71F2263843E3008AEFFD /* OpenGL.framework */; };
 		FD8A71F5263843E6008AEFFD /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8A71F4263843E6008AEFFD /* GLUT.framework */; };
+		FDEDC6E32639931C0009AAA3 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDEDC6E12639931C0009AAA3 /* Matrix.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		FD8A71E4263843CB008AEFFD /* Canvas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Canvas.hpp; sourceTree = "<group>"; };
 		FD8A71F2263843E3008AEFFD /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		FD8A71F4263843E6008AEFFD /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		FDEDC6E12639931C0009AAA3 /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		FDEDC6E22639931C0009AAA3 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 				FD8A71D6263843CB008AEFFD /* Canvas.cpp */,
 				FD8A71D7263843CB008AEFFD /* GlobalVar.cpp */,
 				FD8A71D8263843CB008AEFFD /* Quadrilateral.cpp */,
+				FDEDC6E12639931C0009AAA3 /* Matrix.cpp */,
 				FD8A71D9263843CB008AEFFD /* Point.cpp */,
 				FD8A71DA263843CB008AEFFD /* Triangle.cpp */,
 				FD8A71DC263843CB008AEFFD /* Oval.cpp */,
@@ -115,6 +119,7 @@
 			children = (
 				FD8A71E2263843CB008AEFFD /* Point.hpp */,
 				FD8A71E3263843CB008AEFFD /* GlobalVar.hpp */,
+				FDEDC6E22639931C0009AAA3 /* Matrix.hpp */,
 				FD8A71E4263843CB008AEFFD /* Canvas.hpp */,
 			);
 			path = include;
@@ -188,6 +193,7 @@
 				FD8A71EC263843CB008AEFFD /* Oval.cpp in Sources */,
 				FD8A71E9263843CB008AEFFD /* Point.cpp in Sources */,
 				FD8A71E7263843CB008AEFFD /* GlobalVar.cpp in Sources */,
+				FDEDC6E32639931C0009AAA3 /* Matrix.cpp in Sources */,
 				FD8A71EE263843CC008AEFFD /* main.cpp in Sources */,
 				FD8A71EA263843CB008AEFFD /* Triangle.cpp in Sources */,
 				FD8A71E5263843CB008AEFFD /* Line.cpp in Sources */,

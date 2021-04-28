@@ -27,7 +27,12 @@ public:
     void input(istream& inp);
     void output(ostream& out);
     
-    bool operator != (Point& a);
+    bool operator != (const Point& a);
+    
+    Point operator +(const Point& a);
+    Point operator -(const Point& a);
+    Point operator /(const int a);
+    Point operator *(const int a);
 };
 
 istream& operator >> (istream& inp, Point &p);

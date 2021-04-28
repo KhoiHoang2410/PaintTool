@@ -40,8 +40,28 @@ void Point::output(ostream& out) {
     cout << x << " " << y << endl;
 }
 
-bool Point::operator!=(Point &a) {
+bool Point::operator!=(const Point &a) {
     return x != a.getX() || y != a.getY();
+}
+
+Point Point::operator +(const Point& a) {
+    return Point(x + a.getX(), y + a.getY());
+}
+
+Point Point::operator -(const Point& a) {
+    return Point(x - a.getX(), y - a.getY());
+}
+
+Point Point::operator /(const int a) {
+    if (a == 0) {
+        cout << "Divide Point with 0\n";
+        exit(0);
+    }
+    return Point(x / a, y / a);
+}
+
+Point Point::operator *(const int a) {
+    return Point(x * a, y * a);
 }
 
 istream& operator >> (istream& inp, Point &p) {
