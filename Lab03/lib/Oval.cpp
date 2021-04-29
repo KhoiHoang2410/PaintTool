@@ -9,7 +9,7 @@
 #include "Canvas.hpp"
 
 void Canvas::generateCircle(Point a, Point b) {
-    int r = min(abs(a.getX() - b.getX()), abs(a.getY() - b.getY())) / 2;
+    double r = min(abs(a.getX() - b.getX()), abs(a.getY() - b.getY())) / 2.;
     Point center;
     if (a.getX() <= b.getX())
         if (a.getY() < b.getY())
@@ -42,8 +42,8 @@ void Canvas::generateCircle(Point a, Point b) {
 }
 
 void Canvas::generateElippse(Point a, Point b) {
-    int r1 = abs(a.getX() - b.getX()) / 2;
-    int r2 = abs(a.getY() - b.getY()) / 2;
+    double r1 = abs(a.getX() - b.getX()) / 2;
+    double r2 = abs(a.getY() - b.getY()) / 2;
     
     Point center;
     if (a.getX() < b.getX())
@@ -56,10 +56,10 @@ void Canvas::generateElippse(Point a, Point b) {
     else
         center = Point(a.getX() - r1, a.getY() - r2);
     
-    int x = 0, y = r2;
-    int d1 = r2 * r2 - r1 * r1 * r2 + 0.25 * r1 * r1;
-    int dx = 2 * r2 * r2 * x;
-    int dy = 2 * r1 * r1 * y;
+    double x = 0, y = r2;
+    double d1 = r2 * r2 - r1 * r1 * r2 + 0.25 * r1 * r1;
+    double dx = 2 * r2 * r2 * x;
+    double dy = 2 * r1 * r1 * y;
     
     while (dx < dy) {
         for (int i=-1;i<=1;i+=2)
@@ -79,7 +79,7 @@ void Canvas::generateElippse(Point a, Point b) {
         }
     }
     
-    int d2 = (r2 * r2 * (x + 0.5) * (x + 0.5)) + (r1 * r1 * (y - 1) * (y - 1)) - r1 * r1 * r2 * r2;
+    double d2 = (r2 * r2 * (x + 0.5) * (x + 0.5)) + (r1 * r1 * (y - 1) * (y - 1)) - r1 * r1 * r2 * r2;
     
     while (y >= 0) {
         for (int i=-1;i<=1;i+=2)

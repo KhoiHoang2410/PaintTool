@@ -14,6 +14,7 @@
 
 #include "Canvas.hpp"
 #include "GlobalVar.hpp"
+#include "Matrix.hpp"
 #include <GLUT/GLUT.h>
 #include <queue>
 
@@ -26,70 +27,70 @@ Canvas::Canvas() {
 }
 
 void Canvas::initNewObj(int type) {
-    points.push_back(make_pair(type, vector<Point>()));
+    objects.push_back(make_pair(type, vector<Point>()));
 }
 
 void Canvas::clear() {
-    for (int i=0;i<points.size();++i)
-        points[i].se.clear();
-    points.clear();
+    for (int i=0;i<objects.size();++i)
+        objects[i].se.clear();
+    objects.clear();
 }
 
-void Canvas::add(int x, int y) {
-    points.back().se.push_back(Point(x, y));
+void Canvas::add(double x, double y) {
+    objects.back().se.push_back(Point(x, y));
 }
 
 void Canvas::add(const Canvas& src) {
-    if (src.points.size() == 0) return;
+    if (src.objects.size() == 0) return;
     
-    points.push_back(src.points.back());
+    objects.push_back(src.objects.back());
 }
 
-void Canvas::putPixel(int x, int y) {
+void Canvas::putPixel(double x, double y) {
     glBegin(GL_POINTS);
-    glVertex2i(x, y);
+    glVertex2d(x, y);
     glEnd();
 }
 
 void Canvas::drawScreen() {
-    for (int i=0; i<points.size(); ++i) {
-        switch (points[i].fi) {
+    for (int i=0; i<objects.size(); ++i) {
+        switch (objects[i].fi) {
             case FREESTYLE:
-                for (int j=1; j<points[i].se.size(); ++j)
-                    generateLine(points[i].se[j-1], points[i].se[j]);
+                for (int j=1; j<objects[i].se.size(); ++j)
+                    generateLine(objects[i].se[j-1], objects[i].se[j]);
                 
-                generateLine(points[i].se[0], points[i].se.back());
+                generateLine(objects[i].se[0], objects[i].se.back());
                 break;
             case PENCIL:
-                for (int j=0; j<points[i].se.size(); ++j)
-                    putPixel(points[i].se[j].getX(), points[i].se[j].getY());
+                for (int j=0; j<objects[i].se.size(); ++j)
+                    putPixel(objects[i].se[j].getX(), objects[i].se[j].getY());
                 break;
             case LINE:
-                generateLine(points[i].se[0], points[i].se[1]);
+                generateLine(objects[i].se[0], objects[i].se[1]);
                 break;
                 
             case CIRCLE:
-                generateCircle(points[i].se[0], points[i].se[1]);
+                generateCircle(objects[i].se[0], objects[i].se[1]);
                 break;
           
             case ELIPPSE:
-                generateElippse(points[i].se[0], points[i].se[1]);
+                generateElippse(objects[i].se[0], objects[i].se[1]);
                 break;
                 
             case RIGHT_TRIANGLE:
-                generateRightTriangle(points[i].se[0], points[i].se[1]);
+                generateRightTriangle(objects[i].se[0], objects[i].se[1]);
                 break;
                 
             case EQUILATERAL_TRIANGLE:
-                generateEquilateralTriangle(points[i].se[0], points[i].se[1]);
+                generateEquilateralTriangle(objects[i].se[0], objects[i].se[1]);
                 break;
                 
             case RECTANGLE:
-                generateRectangle(points[i].se[0], points[i].se[1]);
+                generateRectangle(objects[i].se[0], objects[i].se[1]);
                 break;
                 
             case SQUARE:
-                generateSquare(points[i].se[0], points[i].se[1]);
+                generateSquare(objects[i].se[0], objects[i].se[1]);
                 break;
                 
             default:
@@ -104,61 +105,83 @@ void Canvas::clearScreen() {
 
 Point Canvas::pivot(int id) {
     if (id == -1) {
-        if (points.empty()) {
+        if (objects.empty()) {
             exit(0);
         }
-        id = (int) points.size() - 1;
+        id = (int) objects.size() - 1;
     }
     
     Point res = Point(0, 0);
-    for (int i=0;i<points[id].se.size();++i)
-        res = res + points[id].se[i];
+    for (int i=0;i<objects[id].se.size();++i)
+        res = res + objects[id].se[i];
     
-    return res / (int) points[id].se.size();
+    return res / (double) objects[id].se.size();
 }
 
 void Canvas::moveUp(int id) {
     if (id == -1) {
-        if (points.empty()) return;
-        id = (int) points.size() - 1;
+        if (objects.empty()) return;
+        id = (int) objects.size() - 1;
     }
     
-    for (int i=0; i < points[id].se.size(); ++i) {
-        points[id].se[i] += Point(0, 5);
+    for (int i=0; i < objects[id].se.size(); ++i) {
+        objects[id].se[i] += Point(0, 5);
     }
 }
 
 void Canvas::moveDown(int id) {
     if (id == -1) {
-        if (points.empty()) return;
-        id = (int) points.size() - 1;
+        if (objects.empty()) return;
+        id = (int) objects.size() - 1;
     }
     
-    for (int i=0; i < points[id].se.size(); ++i) {
-        points[id].se[i] += Point(0, -5);
+    for (int i=0; i < objects[id].se.size(); ++i) {
+        objects[id].se[i] += Point(0, -5);
     }
 }
 
 void Canvas::moveLeft(int id) {
     if (id == -1) {
-        if (points.empty()) return;
-        id = (int) points.size() - 1;
+        if (objects.empty()) return;
+        id = (int) objects.size() - 1;
     }
     
-    for (int i=0; i < points[id].se.size(); ++i) {
-        points[id].se[i] += Point(-5, 0);
+    for (int i=0; i < objects[id].se.size(); ++i) {
+        objects[id].se[i] += Point(-5, 0);
     }
 }
 
 void Canvas::moveRight(int id) {
     if (id == -1) {
-        if (points.empty()) return;
-        id = (int) points.size() - 1;
+        if (objects.empty()) return;
+        id = (int) objects.size() - 1;
     }
     
-    for (int i=0; i < points[id].se.size(); ++i) {
-        points[id].se[i] += Point(5, 0);
+    for (int i=0; i < objects[id].se.size(); ++i) {
+        objects[id].se[i] += Point(5, 0);
     }
 }
+
+void Canvas::scaleUp(int id) {
+    if (id == -1) {
+        if (objects.empty()) return;
+        id = (int) objects.size() - 1;
+    }
+    
+    Matrix pv = pivot(id);
+    for (int i=0; i < objects[id].se.size(); ++i) {
+        Matrix tmp = Matrix(objects[id].se[i]) * Matrix(vector<double>{1.1, 0, 0, 1.1}, 2, 2) + pv * Matrix(vector<double>{1 - 1.1, 0, 0, 1 - 1.1}, 2, 2);;
+        //objects[id].se[i] =
+        //
+    }
+}
+
+void Canvas::scaleDown(int id) {
+    if (id == -1) {
+        if (objects.empty()) return;
+        id = (int) objects.size() - 1;
+    }
+}
+
 
 

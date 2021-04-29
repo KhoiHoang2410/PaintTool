@@ -25,7 +25,7 @@ void Canvas::generateEquilateralTriangle(Point a, Point b) {
     int delta = abs(a.getX() - b.getX()) - abs(a.getY() - b.getY());
     
     Point u, v, z;
-    int aa, ah, d;
+    double aa, ah, d;
     
     if (delta <= 0) { // dx = length side of triangle
         aa = abs(a.getX() - b.getX());
@@ -40,7 +40,7 @@ void Canvas::generateEquilateralTriangle(Point a, Point b) {
         if (a.getX() < b.getX()) d = 1;
         else d = -1;
     
-        z = Point(a.getX() + aa / 2 * d, a.getY());
+        z = Point(a.getX() + aa / 2. * d, a.getY());
         u = Point(a.getX(), a.getY() - ah);
         v = Point(a.getX() + aa * d, a.getY() - ah);
     }

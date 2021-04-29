@@ -11,7 +11,26 @@
 Matrix::Matrix(int n, int m) {
     this->n = n;
     this->m = m;
-    arr.resize(n, vector<int>(m));
+    arr.resize(n, vector<double>(m, 0));
+}
+
+Matrix::Matrix(vector<double> src, int n, int m) {
+    this->n = n;
+    this->m = m;
+    for (int i=0; i<n; ++i)
+        for (int j=0; j<m; ++j)
+            arr[i][j] = src[i*m+j];
+}
+
+Matrix::Matrix(const Point& src) {
+    n = 1; m = 2;
+    arr.resize(1, vector<double>(2, 0));
+    arr[0][1] = (double) src.getX();
+    arr[0][2] = (double) src.getY();
+}
+
+pair<int, int> Matrix::getSize() const {
+    return make_pair(n, m);
 }
 
 void Matrix::clear() {
@@ -20,7 +39,11 @@ void Matrix::clear() {
             arr[i][j] = 0;
 }
 
-int& Matrix::get(int i, int j) {
+double& Matrix::set(int i, int j) {
+    return arr[i][j];
+}
+
+double Matrix::get(int i, int j) const {
     return arr[i][j];
 }
 
@@ -66,3 +89,5 @@ Matrix Matrix::operator -(const Matrix& src) {
     
     return res;
 }
+
+

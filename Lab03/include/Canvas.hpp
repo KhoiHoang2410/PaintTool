@@ -14,16 +14,16 @@ using namespace std;
 
 class Canvas {
 private:
-    vector<pair<int, vector<Point> > > points;
+    vector<pair<int, vector<Point> > > objects;
     int width, height;
 public:
     Canvas();
     
     void clearScreen();
     
-    void putPixel(int x, int y);
+    void putPixel(double x, double y);
     
-    void add(int x, int y);
+    void add(double x, double y);
     void add(const Canvas& src);
     void drawScreen();
     
@@ -45,6 +45,9 @@ public:
     void moveDown(int id = -1);
     void moveLeft(int id = -1);
     void moveRight(int id = -1);
+    
+    void scaleUp(int id = -1);
+    void scaleDown(int id = -1);
     
     void clear();
 };

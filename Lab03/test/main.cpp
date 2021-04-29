@@ -170,32 +170,43 @@ void ProcessDraw(int type) {
 
 void keyboardFunc(unsigned char key, int x, int y) {
     if ('A' <= key && key <= 'Z') key -= 'A' - 'a';
+    
+    switch (key) {
+        case '+':
+            base.scaleUp();
+            break;
+        case '-':
+            base.scaleDown();
+            break;
+        default:
+            return;
+    }
+    
+    base.clearScreen();
+    base.drawScreen();
+    glFlush();
 }
 
 void specialFunc(int key, int x, int y) {
     switch (key) {
         case GLUT_KEY_UP:
             base.moveUp();
-            base.clearScreen();
-            base.drawScreen();
             break;
         case GLUT_KEY_DOWN:
             base.moveDown();
-            base.clearScreen();
-            base.drawScreen();
             break;
         case GLUT_KEY_LEFT:
             base.moveLeft();
-            base.clearScreen();
-            base.drawScreen();
             break;
         case GLUT_KEY_RIGHT:
             base.moveRight();
-            base.clearScreen();
-            base.drawScreen();
             break;
         default:
-            break;
+            return;
     }
+    
+    base.clearScreen();
+    base.drawScreen();
+    
     glFlush();
 }

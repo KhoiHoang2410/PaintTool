@@ -11,17 +11,17 @@
 #define se second
 
 void Canvas::generateLine(Point a, Point b) {
-    int dx = abs(b.getX() - a.getX());
-    int dy = abs(b.getY() - a.getY());
+    double dx = abs(b.getX() - a.getX());
+    double dy = abs(b.getY() - a.getY());
 
     if (dx >= dy) {
         if (a.getX() > b.getX()) swap(a, b);
         
         dy = b.getY() - a.getY();
-        int p = 2 * abs(dy) - dx;
-        int c1 = 2 * abs(dy);
-        int c2 = 2 * (abs(dy) - dx);
-        int x = a.getX(), y = a.getY();
+        double p = 2 * abs(dy) - dx;
+        double c1 = 2 * abs(dy);
+        double c2 = 2 * (abs(dy) - dx);
+        double x = a.getX(), y = a.getY();
         
         do {
             putPixel(x, y);
@@ -39,10 +39,10 @@ void Canvas::generateLine(Point a, Point b) {
         if (a.getY() > b.getY()) swap(a, b);
         
         dx = b.getX() - a.getX();
-        int p = 2 * abs(dx) - dy;
-        int c1 = 2 * abs(dx);
-        int c2 = 2 * (abs(dx) - dy);
-        int x = a.getX(), y = a.getY();
+        double p = 2 * abs(dx) - dy;
+        double c1 = 2 * abs(dx);
+        double c2 = 2 * (abs(dx) - dy);
+        double x = a.getX(), y = a.getY();
                 
         do {
             putPixel(x, y);

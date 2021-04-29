@@ -11,24 +11,24 @@ Point::Point() {
     x = y = 0;
 }
 
-Point::Point(int _x, int _y) {
+Point::Point(double _x, double _y) {
     x = _x;
     y = _y;
 }
 
-void Point::setX(int _x) {
+void Point::setX(double _x) {
     x = _x;
 }
 
-void Point::setY(int _y) {
+void Point::setY(double _y) {
     y = _y;
 }
 
-int Point::getX() const {
+double Point::getX() const {
     return x;
 }
 
-int Point::getY() const {
+double Point::getY() const {
     return y;
 }
 
@@ -52,12 +52,16 @@ Point Point::operator -(const Point& a) {
     return Point(x - a.getX(), y - a.getY());
 }
 
-Point Point::operator /(const int a) {
+Point Point::operator /(const double a) {
     if (a == 0) {
         cout << "Divide Point with 0\n";
         exit(0);
     }
     return Point(x / a, y / a);
+}
+
+Point Point::operator *(const double a) {
+    return Point(x * a, y * a);
 }
 
 Point& Point::operator +=(const Point& a) {
@@ -70,18 +74,14 @@ Point& Point::operator -=(const Point& a) {
     return *this;
 }
 
-Point& Point::operator /=(const int a) {
+Point& Point::operator /=(const double a) {
     *this = *this / a;
     return *this;
 }
 
-Point& Point::operator *=(const int a) {
+Point& Point::operator *=(const double a) {
     *this = *this * a;
     return *this;
-}
-
-Point Point::operator *(const int a) {
-    return Point(x * a, y * a);
 }
 
 istream& operator >> (istream& inp, Point &p) {
@@ -93,3 +93,5 @@ ostream& operator << (ostream& out, Point &p) {
     p.output(out);
     return out;
 }
+
+

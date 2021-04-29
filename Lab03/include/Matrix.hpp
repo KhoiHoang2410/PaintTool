@@ -9,17 +9,23 @@
 #define Matrix_hpp
 
 #include <vector>
+#include "Point.hpp"
 using namespace std;
 
 class Matrix {
 private:
     int n, m;
-    vector<vector<int> > arr;
+    vector<vector<double> > arr;
 public:
+    Matrix() = default;
     Matrix(int n, int m);
-
+    Matrix(const Point& src);
+    Matrix(vector<double> src, int n, int m);
+    
     void clear();
-    int& get(int i, int j);
+    double get(int i, int j) const;
+    double& set(int i, int j);
+    pair<int, int> getSize() const;
 
     Matrix operator *(const Matrix& src);
     Matrix operator +(const Matrix& src);
@@ -27,3 +33,6 @@ public:
 };
 
 #endif /* Matrix_hpp */
+
+
+
