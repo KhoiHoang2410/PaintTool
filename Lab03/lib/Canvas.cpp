@@ -16,7 +16,7 @@
 #include "GlobalVar.hpp"
 #include "Matrix.hpp"
 #include <GLUT/GLUT.h>
-#include <queue>
+#include <math.h>
 
 using namespace std;
 
@@ -194,5 +194,34 @@ void Canvas::scaleDown(int id) {
     }
 }
 
-
+void Canvas::rotateLeft(int id) {
+    if (id == -1) {
+        if (objects.empty()) return;
+        id = (int) objects.size() - 1;
+    }
+    
+    Matrix pv = pivot(id), tmp1, tmp2;
+    double alpha = - GlobalVar::getPi() / 90.;
+    for (int i=0; i < objects[id].se.size(); ++i) {
+        tmp1 = objects[id].se[i] - pv;
+        tmp2 = Matrix(vector<double>{cos(alpha), sin(alpha), -sin(alpha), cos(alpha)}, 2, 2);
+        
+        objects[id].se[i] = pv + (tmp1 * tmp2);
+    }
+}
+void Canvas::rotateRight(int id) {
+    if (id == -1) {
+        if (objects.empty()) return;
+        id = (int) objects.size() - 1;
+    }
+    
+    Matrix pv = pivot(id), tmp1, tmp2;
+    double alpha = GlobalVar::getPi() / 90.;
+    for (int i=0; i < objects[id].se.size(); ++i) {
+        tmp1 = objects[id].se[i] - pv;
+        tmp2 = Matrix(vector<double>{cos(alpha), sin(alpha), -sin(alpha), cos(alpha)}, 2, 2);
+        
+        objects[id].se[i] = pv + (tmp1 * tmp2);
+    }
+}
 

@@ -100,12 +100,12 @@ Matrix Matrix::operator +=(const Matrix& src) {
 }
 
 Matrix Matrix::operator -=(const Matrix& src) {
-    *this = *this + src;
+    *this = *this - src;
     return *this;
 }
 
 Matrix Matrix::operator *=(const Matrix& src) {
-    *this = *this + src;
+    *this = *this * src;
     return *this;
 }
 

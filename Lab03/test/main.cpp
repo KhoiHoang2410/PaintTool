@@ -177,6 +177,12 @@ void keyboardFunc(unsigned char key, int x, int y) {
         case '-':
             base.scaleDown();
             break;
+        case 'l':
+            base.rotateLeft();
+            break;
+        case 'r':
+            base.rotateRight();
+            break;
         default:
             return;
     }

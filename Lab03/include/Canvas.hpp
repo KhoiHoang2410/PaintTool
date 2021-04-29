@@ -49,6 +49,9 @@ public:
     void scaleUp(int id = -1);
     void scaleDown(int id = -1);
     
+    void rotateLeft(int id = -1);
+    void rotateRight(int id = -1);
+    
     void clear();
 };
 
