@@ -8,80 +8,53 @@
 #include "Point.hpp"
 
 Point::Point() {
-    x = y = 0;
+    n = 1; m = 2;
+    arr.resize(1, vector<double>(2, 0));
 }
 
-Point::Point(double _x, double _y) {
-    x = _x;
-    y = _y;
+Point::Point(double x, double y, bool isBase) {
+    if (!isBase) {
+        n = 1; m = 2;
+        arr.resize(1, vector<double>(2, 0));
+        arr[0][0] = x;
+        arr[0][1] = y;
+    }
 }
 
-void Point::setX(double _x) {
-    x = _x;
+Point::Point(const Matrix& src) {
+    n = src.getSize().first;
+    m = src.getSize().second;
+    if (n != 1 || m != 2) {
+        cout << "Error cast from Matrix to Point.\n";
+        exit(1);
+    }
+    
+    arr[0][0] = src.get(0, 0);
+    arr[0][1] = src.get(0, 1);
 }
 
-void Point::setY(double _y) {
-    y = _y;
+void Point::setX(double x) {
+    arr[0][0] = x;
+}
+
+void Point::setY(double y) {
+    arr[0][1] = y;
 }
 
 double Point::getX() const {
-    return x;
+    return arr[0][0];
 }
 
 double Point::getY() const {
-    return y;
+    return arr[0][1];
 }
 
 void Point::input(istream& inp) {
-    inp >> x >> y;
+    inp >> arr[0][0] >> arr[0][1];
 }
 
 void Point::output(ostream& out) {
-    cout << x << " " << y << endl;
-}
-
-bool Point::operator!=(const Point &a) {
-    return x != a.getX() || y != a.getY();
-}
-
-Point Point::operator +(const Point& a) {
-    return Point(x + a.getX(), y + a.getY());
-}
-
-Point Point::operator -(const Point& a) {
-    return Point(x - a.getX(), y - a.getY());
-}
-
-Point Point::operator /(const double a) {
-    if (a == 0) {
-        cout << "Divide Point with 0\n";
-        exit(0);
-    }
-    return Point(x / a, y / a);
-}
-
-Point Point::operator *(const double a) {
-    return Point(x * a, y * a);
-}
-
-Point& Point::operator +=(const Point& a) {
-    *this = *this + a;
-    return *this;
-}
-
-Point& Point::operator -=(const Point& a) {
-    *this = *this - a;
-    return *this;
-}
-
-Point& Point::operator /=(const double a) {
-    *this = *this / a;
-    return *this;
-}
-
-Point& Point::operator *=(const double a) {
-    *this = *this * a;
-    return *this;
+    cout << arr[0][0] << " " << arr[0][1] << endl;
 }
 
 istream& operator >> (istream& inp, Point &p) {
@@ -93,5 +66,3 @@ ostream& operator << (ostream& out, Point &p) {
     p.output(out);
     return out;
 }
-
-

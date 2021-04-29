@@ -106,6 +106,7 @@ void Canvas::clearScreen() {
 Point Canvas::pivot(int id) {
     if (id == -1) {
         if (objects.empty()) {
+            cout << "Pivot error.\n";
             exit(0);
         }
         id = (int) objects.size() - 1;
@@ -123,6 +124,7 @@ void Canvas::moveUp(int id) {
         if (objects.empty()) return;
         id = (int) objects.size() - 1;
     }
+
     
     for (int i=0; i < objects[id].se.size(); ++i) {
         objects[id].se[i] += Point(0, 5);
@@ -170,9 +172,7 @@ void Canvas::scaleUp(int id) {
     
     Matrix pv = pivot(id);
     for (int i=0; i < objects[id].se.size(); ++i) {
-        Matrix tmp = Matrix(objects[id].se[i]) * Matrix(vector<double>{1.1, 0, 0, 1.1}, 2, 2) + pv * Matrix(vector<double>{1 - 1.1, 0, 0, 1 - 1.1}, 2, 2);;
-        //objects[id].se[i] =
-        //
+        objects[id].se[i] = objects[id].se[i] * Matrix(vector<double>{1.1, 0, 0, 1.1}, 2, 2) + pv * Matrix(vector<double>{1 - 1.1, 0, 0, 1 - 1.1}, 2, 2);;
     }
 }
 

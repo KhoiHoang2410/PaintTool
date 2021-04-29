@@ -26,7 +26,6 @@ void specialFunc(int key, int x, int y);
 void ProcessDraw(int type);
 
 int main(int argc, char** argv) {
-    freopen("output.txt", "w", stdout);
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(GlobalVar::getWidth(), GlobalVar::getHeight());
