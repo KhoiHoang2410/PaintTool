@@ -29,6 +29,7 @@ Point::Point(const Matrix& src) {
         exit(1);
     }
     
+    arr.resize(1, vector<double>(2, 0));++
     arr[0][0] = src.get(0, 0);
     arr[0][1] = src.get(0, 1);
 }

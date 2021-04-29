@@ -19,6 +19,7 @@ Matrix::Matrix(int n, int m, bool isBase) {
 Matrix::Matrix(vector<double> src, int n, int m) {
     this->n = n;
     this->m = m;
+    arr.resize(n, vector<double>(m, 0));
     for (int i=0; i<n; ++i)
         for (int j=0; j<m; ++j)
             arr[i][j] = src[i*m+j];

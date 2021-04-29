@@ -170,9 +170,12 @@ void Canvas::scaleUp(int id) {
         id = (int) objects.size() - 1;
     }
     
-    Matrix pv = pivot(id);
+    Matrix pv = pivot(id), tmp1, tmp2;
     for (int i=0; i < objects[id].se.size(); ++i) {
-        objects[id].se[i] = objects[id].se[i] * Matrix(vector<double>{1.1, 0, 0, 1.1}, 2, 2) + pv * Matrix(vector<double>{1 - 1.1, 0, 0, 1 - 1.1}, 2, 2);;
+        tmp1 = objects[id].se[i] * Matrix(vector<double>{1.1, 0, 0, 1.1}, 2, 2);
+        tmp2 = pv * Matrix(vector<double>{1 - 1.1, 0, 0, 1 - 1.1}, 2, 2);
+        
+        objects[id].se[i] = tmp1 + tmp2;
     }
 }
 
@@ -180,6 +183,14 @@ void Canvas::scaleDown(int id) {
     if (id == -1) {
         if (objects.empty()) return;
         id = (int) objects.size() - 1;
+    }
+    
+    Matrix pv = pivot(id), tmp1, tmp2;
+    for (int i=0; i < objects[id].se.size(); ++i) {
+        tmp1 = objects[id].se[i] * Matrix(vector<double>{0.9, 0, 0, 0.9}, 2, 2);
+        tmp2 = pv * Matrix(vector<double>{1 - 0.9, 0, 0, 1 - 0.9}, 2, 2);
+        
+        objects[id].se[i] = tmp1 + tmp2;
     }
 }
 
