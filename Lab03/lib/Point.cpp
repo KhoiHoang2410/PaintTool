@@ -60,6 +60,26 @@ Point Point::operator /(const int a) {
     return Point(x / a, y / a);
 }
 
+Point& Point::operator +=(const Point& a) {
+    *this = *this + a;
+    return *this;
+}
+
+Point& Point::operator -=(const Point& a) {
+    *this = *this - a;
+    return *this;
+}
+
+Point& Point::operator /=(const int a) {
+    *this = *this / a;
+    return *this;
+}
+
+Point& Point::operator *=(const int a) {
+    *this = *this * a;
+    return *this;
+}
+
 Point Point::operator *(const int a) {
     return Point(x * a, y * a);
 }

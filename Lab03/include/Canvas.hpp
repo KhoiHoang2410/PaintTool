@@ -41,6 +41,11 @@ public:
     
     void initNewObj(int type);
     
+    void moveUp(int id = -1);
+    void moveDown(int id = -1);
+    void moveLeft(int id = -1);
+    void moveRight(int id = -1);
+    
     void clear();
 };
 

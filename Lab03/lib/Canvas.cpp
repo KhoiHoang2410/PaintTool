@@ -103,7 +103,12 @@ void Canvas::clearScreen() {
 }
 
 Point Canvas::pivot(int id) {
-    if (id == -1) id = (int) points.size() - 1;
+    if (id == -1) {
+        if (points.empty()) {
+            exit(0);
+        }
+        id = (int) points.size() - 1;
+    }
     
     Point res = Point(0, 0);
     for (int i=0;i<points[id].se.size();++i)
@@ -111,3 +116,49 @@ Point Canvas::pivot(int id) {
     
     return res / (int) points[id].se.size();
 }
+
+void Canvas::moveUp(int id) {
+    if (id == -1) {
+        if (points.empty()) return;
+        id = (int) points.size() - 1;
+    }
+    
+    for (int i=0; i < points[id].se.size(); ++i) {
+        points[id].se[i] += Point(0, 5);
+    }
+}
+
+void Canvas::moveDown(int id) {
+    if (id == -1) {
+        if (points.empty()) return;
+        id = (int) points.size() - 1;
+    }
+    
+    for (int i=0; i < points[id].se.size(); ++i) {
+        points[id].se[i] += Point(0, -5);
+    }
+}
+
+void Canvas::moveLeft(int id) {
+    if (id == -1) {
+        if (points.empty()) return;
+        id = (int) points.size() - 1;
+    }
+    
+    for (int i=0; i < points[id].se.size(); ++i) {
+        points[id].se[i] += Point(-5, 0);
+    }
+}
+
+void Canvas::moveRight(int id) {
+    if (id == -1) {
+        if (points.empty()) return;
+        id = (int) points.size() - 1;
+    }
+    
+    for (int i=0; i < points[id].se.size(); ++i) {
+        points[id].se[i] += Point(5, 0);
+    }
+}
+
+

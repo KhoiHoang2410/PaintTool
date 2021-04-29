@@ -21,7 +21,8 @@ bool isFirstTime = 1;
 Point ptmp1, ptmp2;
 
 void Render();
-void keyboardUpFunc(unsigned char key, int x, int y);
+void keyboardFunc(unsigned char key, int x, int y);
+void specialFunc(int key, int x, int y);
 void ProcessDraw(int type);
 
 int main(int argc, char** argv) {
@@ -40,7 +41,8 @@ int main(int argc, char** argv) {
     glutMouseFunc(GlobalVar::mouseFunc);
     glutMotionFunc(GlobalVar::motionFunc);
     
-    glutKeyboardUpFunc(keyboardUpFunc);
+    glutKeyboardFunc(keyboardFunc);
+    glutSpecialFunc(specialFunc);
     
     glutDisplayFunc(&Render);
     
@@ -166,6 +168,34 @@ void ProcessDraw(int type) {
     newObj.drawScreen();
 }
 
-void keyboardUpFunc(unsigned char key, int x, int y) {
+void keyboardFunc(unsigned char key, int x, int y) {
     if ('A' <= key && key <= 'Z') key -= 'A' - 'a';
+}
+
+void specialFunc(int key, int x, int y) {
+    switch (key) {
+        case GLUT_KEY_UP:
+            base.moveUp();
+            base.clearScreen();
+            base.drawScreen();
+            break;
+        case GLUT_KEY_DOWN:
+            base.moveDown();
+            base.clearScreen();
+            base.drawScreen();
+            break;
+        case GLUT_KEY_LEFT:
+            base.moveLeft();
+            base.clearScreen();
+            base.drawScreen();
+            break;
+        case GLUT_KEY_RIGHT:
+            base.moveRight();
+            base.clearScreen();
+            base.drawScreen();
+            break;
+        default:
+            break;
+    }
+    glFlush();
 }
