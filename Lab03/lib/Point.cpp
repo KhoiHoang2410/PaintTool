@@ -24,12 +24,13 @@ Point::Point(double x, double y, bool isBase) {
 Point::Point(const Matrix& src) {
     n = src.getSize().first;
     m = src.getSize().second;
+
     if (n != 1 || m != 2) {
         cout << "Error cast from Matrix to Point.\n";
         exit(1);
     }
     
-    arr.resize(1, vector<double>(2, 0));++
+    arr.resize(1, vector<double>(2, 0));
     arr[0][0] = src.get(0, 0);
     arr[0][1] = src.get(0, 1);
 }
