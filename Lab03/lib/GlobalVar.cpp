@@ -207,7 +207,7 @@ void GlobalVar::Render() {
             break;
         case QUIT:
             base.clear();
-            glutDestroyMenu(window_id);
+            glutDestroyMenu(windowID);
             exit(0);
         default:
             break;

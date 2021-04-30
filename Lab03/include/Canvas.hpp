@@ -20,12 +20,12 @@ public:
     Canvas();
     
     void clearScreen();
-    
     void putPixel(double x, double y);
-    
     void add(double x, double y);
     void add(const Canvas& src);
     void drawScreen();
+    
+    void initNewObj(int type);
     
     Point pivot(int id = -1);
     
@@ -38,8 +38,6 @@ public:
     
     void generateRectangle(Point a, Point b);
     void generateSquare(Point a, Point b);
-    
-    void initNewObj(int type);
     
     void moveUp(int id = -1);
     void moveDown(int id = -1);
