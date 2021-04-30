@@ -5,7 +5,6 @@
 //  Created by Nguyen-Khoi Hoang on 20/04/2021.
 //
 
-#include <stdio.h>
 #include "Canvas.hpp"
 
 void Canvas::generateCircle(Point a, Point b) {

@@ -10,6 +10,7 @@
 
 #include <string>
 #include "Point.hpp"
+#include "Canvas.hpp"
 using namespace std;
 
 enum MENU {CLEAR, QUIT, LINE, CIRCLE, ELIPPSE,
@@ -20,30 +21,22 @@ enum MENU {CLEAR, QUIT, LINE, CIRCLE, ELIPPSE,
 
 class GlobalVar {
 private:
-    inline static int width = 640, height = 480;
-    inline static string windowName = "HNKhoi-18125038";
-    inline static string testFileName = "test.txt";
     inline static bool isFirstTimeFreeStyle = 1;
 public:
+    inline static int width = 640, height = 480;
+    inline static string windowName = "HNKhoi-18125038";
+    
+    inline static int window_id, idTitle;
+    inline static Canvas base, newObj;
+    inline static Point ptmp1, ptmp2, Ppre, Pcur;
     inline static bool isHoldLeft = 0, isFinishHoldLeft = 0, isFinishHoldRight = 0;
-    inline static Point Ppre, Pcur;
-    inline static int idTitle;
-
-    static void setWidth(int w);
-    static void setHeight(int h);
-    static void setResolution(int w, int h);
-    static void setWindowName(string name);
+    inline static bool isRelease = 1, isFirstTime = 1;
     
     static bool checkWidth(int center, int range);
     static bool checkHeight(int center, int range);
     static bool checkWidth(int center);
     static bool checkHeight(int center);
-    
-    static int getWidth();
-    static int getHeight();
-    static string getWindowName();
-    static string getTestFileName();
-    
+        
     static double getPi();
     
     static Point getMiddle();
@@ -54,6 +47,11 @@ public:
     static void menu(int num);
 
     static void createMenu();
+    
+    static void Render();
+    static void keyboardFunc(unsigned char key, int x, int y);
+    static void specialFunc(int key, int x, int y);
+    static void ProcessDraw(int type);
 };
 
 #endif /* GlobalVar_hpp */

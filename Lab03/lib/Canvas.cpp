@@ -14,7 +14,6 @@
 
 #include "Canvas.hpp"
 #include "GlobalVar.hpp"
-#include "Matrix.hpp"
 #include <GLUT/GLUT.h>
 #include <math.h>
 
@@ -22,8 +21,8 @@ using namespace std;
 
 Canvas::Canvas() {
     clear();
-    this->width = GlobalVar::getWidth();
-    this->height = GlobalVar::getHeight();
+    this->width = GlobalVar::width;
+    this->height = GlobalVar::height;
 }
 
 void Canvas::initNewObj(int type) {
@@ -62,8 +61,15 @@ void Canvas::drawScreen() {
                 generateLine(objects[i].se[0], objects[i].se.back());
                 break;
             case PENCIL:
-                for (int j=0; j<objects[i].se.size(); ++j)
-                    putPixel(objects[i].se[j].getX(), objects[i].se[j].getY());
+                if (objects[i].se.size() == 1) {
+                    putPixel(objects[i].se[0].getX(), objects[i].se[0].getY());
+                }
+                else if (objects[i].se.size() > 1) {
+                    for (int j=1; j<objects[i].se.size(); ++j)
+                        generateLine(objects[i].se[j-1], objects[i].se[j]);
+//                        putPixel(objects[i].se[j].getX(), objects[i].se[j].getY());
+                }
+             
                 break;
             case LINE:
                 generateLine(objects[i].se[0], objects[i].se[1]);
