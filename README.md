@@ -4,7 +4,7 @@ Main feature
 - Pencil: draw freeway
 - Free style: application connect every dots by left click. Using right click to end the action, it will connect the first and last dot together
 - Line: Press to draw a line
-- Triange: Support to draw `Right triangle` and `Equilateral triangle'
+- Triange: Support to draw `Right triangle` and `Equilateral triangle`
 - Quadrilateral: Support to draw `Square` and `Rectangle`
 - Oval: Support to draw `circle` and `Elipse`
 
