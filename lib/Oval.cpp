@@ -5,7 +5,7 @@
 //  Created by Nguyen-Khoi Hoang on 20/04/2021.
 //
 
-#include "Canvas.hpp"
+#include "../include/Canvas.hpp"
 
 void Canvas::generateCircle(Point a, Point b) {
     double r = min(abs(a.getX() - b.getX()), abs(a.getY() - b.getY())) / 2.;

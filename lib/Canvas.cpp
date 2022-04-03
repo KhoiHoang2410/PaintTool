@@ -12,8 +12,8 @@
 #define fi first
 #define se second
 
-#include "Canvas.hpp"
-#include "GlobalVar.hpp"
+#include "../include/Canvas.hpp"
+#include "../include/GlobalVar.hpp"
 #include <GLUT/GLUT.h>
 #include <math.h>
 

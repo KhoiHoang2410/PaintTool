@@ -5,7 +5,7 @@
 //  Created by Nguyen-Khoi Hoang on 28/04/2021.
 //
 
-#include "Matrix.hpp"
+#include "../include/Matrix.hpp"
 #include <iostream>
 
 Matrix::Matrix(int n, int m, bool isBase) {

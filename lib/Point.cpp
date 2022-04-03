@@ -5,7 +5,7 @@
 //  Created by Nguyen-Khoi Hoang on 20/04/2021.
 //
 
-#include "Point.hpp"
+#include "../include/Point.hpp"
 
 Point::Point() {
     n = 1; m = 2;

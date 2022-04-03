@@ -10,7 +10,7 @@
 #endif
 
 #include <GLUT/GLUT.h>
-#include "GlobalVar.hpp"
+#include "../include/GlobalVar.hpp"
 #include <math.h>
 
 Point GlobalVar::getMiddle() {

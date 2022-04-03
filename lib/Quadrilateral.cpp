@@ -5,7 +5,7 @@
 //  Created by Nguyen-Khoi Hoang on 21/04/2021.
 //
 
-#include "Canvas.hpp"
+#include "../include/Canvas.hpp"
 
 void Canvas::generateRectangle(Point a, Point b) {
     Point c = Point(a.getX(), b.getY());

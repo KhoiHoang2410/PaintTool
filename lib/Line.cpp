@@ -5,7 +5,7 @@
 //  Created by Nguyen-Khoi Hoang on 20/04/2021.
 //
 
-#include "Canvas.hpp"
+#include "../include/Canvas.hpp"
 #define fi first
 #define se second
 

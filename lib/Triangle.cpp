@@ -5,7 +5,7 @@
 //  Created by Nguyen-Khoi Hoang on 21/04/2021.
 //
 
-#include "Canvas.hpp"
+#include "../include/Canvas.hpp"
 #include <math.h>
 
 void Canvas::generateRightTriangle(Point a, Point b) {

@@ -1,0 +1,4 @@
+main.o
+a.out
+include/*.hpp.gch
+.vscode
