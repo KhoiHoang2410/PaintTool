@@ -33,11 +33,11 @@ public:
     void generateCircle(Point a, Point b);
     void generateElippse(Point a, Point b);
     
-    void generateRightTriangle(Point a, Point b);
-    void generateEquilateralTriangle(Point a, Point b);
+    vector<Point> generateRightTriangle(Point a, Point b);
+    vector<Point> generateEquilateralTriangle(Point a, Point b);
     
-    void generateRectangle(Point a, Point b);
-    void generateSquare(Point a, Point b);
+    vector<Point> generateRectangle(Point a, Point b);
+    vector<Point> generateSquare(Point a, Point b);
     
     void moveUp(int id = -1);
     void moveDown(int id = -1);

@@ -114,7 +114,7 @@ void GlobalVar::createMenu() {
     glutAddMenuEntry("Line", LINE);
     glutAddSubMenu("Triangle", triangle_id);
     glutAddSubMenu("Quadrilateral", quadrilateral_id);
-    glutAddSubMenu("Oval", oval_id);
+    // glutAddSubMenu("Oval", oval_id);
     glutAddMenuEntry("Quit", QUIT);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }

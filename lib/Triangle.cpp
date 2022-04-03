@@ -8,7 +8,7 @@
 #include "../include/Canvas.hpp"
 #include <math.h>
 
-void Canvas::generateRightTriangle(Point a, Point b) {
+vector<Point> Canvas::generateRightTriangle(Point a, Point b) {
     Point c;
 
     if ((b.getX() > a.getX()) ^ (b.getY() < a.getY()))
@@ -19,9 +19,11 @@ void Canvas::generateRightTriangle(Point a, Point b) {
     generateLine(a, b);
     generateLine(b, c);
     generateLine(c, a);
+    
+    return vector<Point> {a, b, c};
 }
 
-void Canvas::generateEquilateralTriangle(Point a, Point b) {
+vector<Point> Canvas::generateEquilateralTriangle(Point a, Point b) {
     int delta = abs(a.getX() - b.getX()) - abs(a.getY() - b.getY());
     
     Point u, v, z;
@@ -56,4 +58,6 @@ void Canvas::generateEquilateralTriangle(Point a, Point b) {
     generateLine(u, v);
     generateLine(z, v);
     generateLine(u, z);
+    
+    return vector<Point>{u, v, z};
 }

@@ -7,7 +7,7 @@
 
 #include "../include/Canvas.hpp"
 
-void Canvas::generateRectangle(Point a, Point b) {
+vector<Point> Canvas::generateRectangle(Point a, Point b) {
     Point c = Point(a.getX(), b.getY());
     Point d = Point(b.getX(), a.getY());
     
@@ -15,9 +15,11 @@ void Canvas::generateRectangle(Point a, Point b) {
     generateLine(c, b);
     generateLine(b, d);
     generateLine(a, d);
+    
+    return vector<Point>{a, c, b, d};
 }
 
-void Canvas::generateSquare(Point a, Point b) {
+vector<Point> Canvas::generateSquare(Point a, Point b) {
     Point c = Point(a.getX(), b.getY());
     
     int r = min(abs(a.getX() - b.getX()), abs(a.getY() - b.getY()));
@@ -38,4 +40,6 @@ void Canvas::generateSquare(Point a, Point b) {
     generateLine(c, b);
     generateLine(c, d);
     generateLine(a, d);
+    
+    return vector<Point>{a, b, c, d};
 }

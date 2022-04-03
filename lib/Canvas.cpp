@@ -84,19 +84,23 @@ void Canvas::drawScreen() {
                 break;
                 
             case RIGHT_TRIANGLE:
-                generateRightTriangle(objects[i].se[0], objects[i].se[1]);
+                objects[i].se = generateRightTriangle(objects[i].se[0], objects[i].se[1]);
+                objects[i].fi = FREESTYLE;
                 break;
                 
             case EQUILATERAL_TRIANGLE:
-                generateEquilateralTriangle(objects[i].se[0], objects[i].se[1]);
+                objects[i].se = generateEquilateralTriangle(objects[i].se[0], objects[i].se[1]);
+                objects[i].fi = FREESTYLE;
                 break;
                 
             case RECTANGLE:
-                generateRectangle(objects[i].se[0], objects[i].se[1]);
+                objects[i].se = generateRectangle(objects[i].se[0], objects[i].se[1]);
+                objects[i].fi = FREESTYLE;
                 break;
                 
             case SQUARE:
-                generateSquare(objects[i].se[0], objects[i].se[1]);
+                objects[i].se = generateSquare(objects[i].se[0], objects[i].se[1]);
+                objects[i].fi = FREESTYLE;
                 break;
                 
             default:
@@ -230,4 +234,3 @@ void Canvas::rotateRight(int id) {
         objects[id].se[i] = pv + (tmp1 * tmp2);
     }
 }
-
